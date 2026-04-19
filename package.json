@@ -1,0 +1,12 @@
+{
+  "name": "orbit-browser",
+  "version": "0.1.0",
+  "description": "Orbit Browser for 360",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^32.0.0"
+  }
+}
