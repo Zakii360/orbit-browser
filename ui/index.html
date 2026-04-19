@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Orbit Browser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="window-chrome">
+    <div class="window-drag-region"></div>
+    <div class="window-controls">
+      <button class="win-btn win-min" data-action="minimize">–</button>
+      <button class="win-btn win-max" data-action="maximize">□</button>
+      <button class="win-btn win-close" data-action="close">×</button>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <div class="tabs-container" id="tabs"></div>
+    <button class="new-tab-btn" id="new-tab-btn">+</button>
+  </div>
+
+  <div class="omnibox-row">
+    <button class="nav-btn" id="back-btn">←</button>
+    <button class="nav-btn" id="forward-btn">→</button>
+    <button class="nav-btn" id="reload-btn">⟳</button>
+    <input
+      type="text"
+      id="omnibox"
+      class="omnibox"
+      placeholder="Search with 360 or enter address"
+      spellcheck="false"
+    />
+  </div>
+
+  <div class="downloads-tray" id="downloads-tray"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
