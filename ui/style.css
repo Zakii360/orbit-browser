@@ -1,0 +1,239 @@
+:root {
+  --bg: #050509;
+  --bg-elevated: rgba(15, 15, 25, 0.9);
+  --accent: #5b8dff;
+  --accent-soft: rgba(91, 141, 255, 0.25);
+  --text: #f5f5ff;
+  --text-muted: #9a9ab5;
+  --danger: #ff4b6b;
+  --radius-pill: 999px;
+  --radius-md: 10px;
+  --blur: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Window chrome */
+
+.window-chrome {
+  position: relative;
+  height: 28px;
+  -webkit-app-region: drag;
+}
+
+.window-drag-region {
+  position: absolute;
+  inset: 0;
+}
+
+.window-controls {
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  display: flex;
+  gap: 4px;
+  -webkit-app-region: no-drag;
+}
+
+.win-btn {
+  width: 32px;
+  height: 20px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.win-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.win-close:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Top bar / tabs */
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 6px;
+  background: linear-gradient(90deg, rgba(20, 20, 40, 0.95), rgba(10, 10, 25, 0.95));
+  backdrop-filter: blur(var(--blur));
+}
+
+.tabs-container {
+  display: flex;
+  flex: 1;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.tab {
+  min-width: 120px;
+  max-width: 220px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.tab.active {
+  background: radial-gradient(circle at top left, var(--accent-soft), rgba(255, 255, 255, 0.02));
+  border-color: var(--accent-soft);
+  color: var(--text);
+}
+
+.tab-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-close {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tab-close:hover {
+  color: var(--text);
+}
+
+.new-tab-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.new-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Omnibox row */
+
+.omnibox-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 8px;
+  background: linear-gradient(90deg, rgba(10, 10, 25, 0.95), rgba(20, 20, 40, 0.95));
+  backdrop-filter: blur(var(--blur));
+}
+
+.nav-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.omnibox {
+  flex: 1;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle at top left, rgba(91, 141, 255, 0.12), rgba(10, 10, 25, 0.95));
+  color: var(--text);
+  padding: 0 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+.omnibox::placeholder {
+  color: var(--text-muted);
+}
+
+/* Downloads tray */
+
+.downloads-tray {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+}
+
+.download-item {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.download-item-title {
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.download-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.download-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #9f7bff);
+}
